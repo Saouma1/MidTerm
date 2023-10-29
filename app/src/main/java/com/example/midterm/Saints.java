@@ -20,6 +20,7 @@ public class Saints extends RecyclerView.Adapter<Saints.ViewHolder> {
     private ArrayList<Athletics> parseAthletics;
     private Context context;
 
+    //Concstructor
     public Saints (ArrayList<Athletics> parseAthletics, Context context){
     this.parseAthletics = parseAthletics;
     this.context= context;
@@ -28,6 +29,8 @@ public class Saints extends RecyclerView.Adapter<Saints.ViewHolder> {
 
     @NonNull
     @Override
+    //This method creates a new box that will take in the new image and other information using the
+    //parse_item format
     public Saints.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.parse_item, parent,false);
 
@@ -35,6 +38,8 @@ public class Saints extends RecyclerView.Adapter<Saints.ViewHolder> {
     }
 
     @Override
+    //After the box has been created in the previous method, this method fills it up with the title and number as as there is
+    //This matrix method that helped me control the positioning of the image inside the ViewHolder
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
 
     Athletics athletics = parseAthletics.get(position);
@@ -48,10 +53,12 @@ public class Saints extends RecyclerView.Adapter<Saints.ViewHolder> {
     }
 
     @Override
+    //count
     public int getItemCount() {
         return parseAthletics.size();
     }
 
+    //View holder's components
     public class ViewHolder extends RecyclerView.ViewHolder {
 
         ImageView imageView;

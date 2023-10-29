@@ -9,12 +9,14 @@ public class Athletics {
 
     }
 
+    //Constructor
     public Athletics(String imgUrl, String title,String number) {
         this.imgUrl = imgUrl;
         Title = title;
         Number = number;
     }
 
+    // Getting and Setting
     public String getImgUrl() {
         return imgUrl;
     }
